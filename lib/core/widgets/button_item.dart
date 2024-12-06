@@ -22,7 +22,7 @@ class ButtonItem extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style:MangerStyle.font600wSize18.copyWith(color: MangerColors.wihte),
+          style:MangerStyle.font600wSize18.copyWith(color: MangerColors.white),
         ),
       ),
     );

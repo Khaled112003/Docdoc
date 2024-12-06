@@ -13,4 +13,9 @@ class MangerStyle {
       fontWeight: FontWeight.w400, fontSize: 13.sp, color: Colors.grey);
   static TextStyle font600wSize18 = const TextStyle(
       color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600);
+      
+      static TextStyle font600wSize13 = TextStyle(
+      fontWeight: FontWeight.w600, fontSize: 13.sp, color: MangerColors.mainBlue);
+      static TextStyle font500wSize13 = TextStyle(
+      fontWeight: FontWeight.w500, fontSize: 13.sp, color: MangerColors.black);
 }

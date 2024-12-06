@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: MangerColors.wihte,
+        backgroundColor: MangerColors.white,
         body: Padding(
           padding:
               const EdgeInsets.only(top: 50, left: 15, right: 15, bottom: 20),
