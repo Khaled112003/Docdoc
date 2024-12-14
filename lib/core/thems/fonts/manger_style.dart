@@ -13,9 +13,27 @@ class MangerStyle {
       fontWeight: FontWeight.w400, fontSize: 13.sp, color: Colors.grey);
   static TextStyle font600wSize18 = const TextStyle(
       color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600);
-      
-      static TextStyle font600wSize13 = TextStyle(
-      fontWeight: FontWeight.w600, fontSize: 13.sp, color: MangerColors.mainBlue);
-      static TextStyle font500wSize13 = TextStyle(
+
+  static TextStyle font600wSize13 = TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 13.sp,
+      color: MangerColors.mainBlue);
+  static TextStyle font500wSize13 = TextStyle(
       fontWeight: FontWeight.w500, fontSize: 13.sp, color: MangerColors.black);
+  static TextStyle fontW400Size13Blue = TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13.sp,
+      color: MangerColors.mainBlue);
+      static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    color: MangerColors.mainBlue,
+    
+  );
+    static TextStyle font14BlueSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: MangerColors.mainBlue,
+  );
 }
+

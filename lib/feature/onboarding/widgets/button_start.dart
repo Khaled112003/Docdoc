@@ -2,6 +2,7 @@ import 'package:daweny/core/thems/colors/colors.dart';
 import 'package:daweny/core/thems/fonts/manger_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class ItemButtonStarted extends StatelessWidget {
   const ItemButtonStarted({
@@ -21,7 +22,9 @@ class ItemButtonStarted extends StatelessWidget {
             color: MangerColors.mainBlue,
             borderRadius: BorderRadius.circular(20)),
         child: MaterialButton(
-          onPressed: (){},
+          onPressed: (){
+            GoRouter.of(context).go("/Login");
+          },
           child: Text(
             "Get Start",
             style:MangerStyle.font600wSize18
