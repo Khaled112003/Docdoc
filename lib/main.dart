@@ -1,9 +1,11 @@
+import 'package:daweny/core/di/depencey_injection.dart';
 import 'package:daweny/core/rouets/router.dart';
 import 'package:daweny/core/thems/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
+  setup();
   runApp(const Docdoc ());
 }
 
