@@ -2,7 +2,7 @@ import 'package:daweny/core/helpers/app_regex.dart';
 import 'package:daweny/core/thems/colors/colors.dart';
 import 'package:daweny/core/widgets/textfeild_item.dart';
 import 'package:daweny/feature/login/logic/cubit/login_cubit.dart';
-import 'package:daweny/feature/login/widgets/password_vaildation.dart';
+import 'package:daweny/core/widgets/password_vaildation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
