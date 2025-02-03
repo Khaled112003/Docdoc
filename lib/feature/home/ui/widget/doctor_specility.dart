@@ -1,9 +1,8 @@
-import 'package:daweny/core/helpers/spacing.dart';
-import 'package:daweny/core/thems/colors/colors.dart';
+
 import 'package:daweny/core/thems/fonts/manger_style.dart';
 import 'package:daweny/feature/home/ui/widget/doctor_specility_listview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class DoctorSpecility extends StatelessWidget {
   const DoctorSpecility({super.key});

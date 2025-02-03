@@ -67,5 +67,17 @@ class MangerStyle {
     fontWeight: FontWeight.w400,
     color: MangerColors.black,
   );
+
+  static TextStyle font16Black700w = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    color: MangerColors.black,
+  );
+  
+  static TextStyle font12Gray500w = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: MangerColors.gray,
+  );
   
 }

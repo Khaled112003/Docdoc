@@ -5,6 +5,8 @@ import 'package:daweny/feature/home/ui/widget/doctors_blue_container.dart';
 import 'package:daweny/feature/home/ui/widget/home_appbar.dart';
 import 'package:flutter/material.dart';
 
+import 'ui/widget/recommendations_doctors.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -15,14 +17,17 @@ class HomeScreen extends StatelessWidget {
       body:  SafeArea(
         child: Padding(
           
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Column(
             children: [
             const  HomeAppbar(),
              const DoctorsBlueContainer(),
               verticalSpace(15),
               
-            const  DoctorSpecility()
+            const  DoctorSpecility(),
+              verticalSpace(15),
+             
+          const  RecommendationsDoctorsListView(),
               
             ],
           ),
