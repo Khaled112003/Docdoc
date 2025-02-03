@@ -4,10 +4,12 @@ part 'login_respose.g.dart';
 @JsonSerializable()
 class LoginRespose {
   final String? message;
-  final String? status;
+  final bool? status;
+  @JsonKey(name: 'data')
+  UserData? userData;
   final int? code;
 
-  LoginRespose({ this.message,  this.status,  this.code});
+  LoginRespose({ this.message,  this.status,this.userData,  this.code});
 
   factory LoginRespose.fromJson(Map<String,dynamic>json)=>_$LoginResposeFromJson(json);
 }

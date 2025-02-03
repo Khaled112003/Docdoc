@@ -9,5 +9,10 @@ class MangerColors {
  
   static const Color lightgray = Color(0xFFFDFDFF);
    static const Color gray = Colors.grey;
+  static const Color darkgray = Color(0xFF616161);
+  
+  static const Color moreLightgray = Color(0xFFF5F5F5);
+  
+  static const Color lightBlue = Color(0xFFE6F0FF);
 
 }

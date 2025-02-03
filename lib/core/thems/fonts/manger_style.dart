@@ -24,16 +24,60 @@ class MangerStyle {
       fontWeight: FontWeight.w400,
       fontSize: 13.sp,
       color: MangerColors.mainBlue);
-      static TextStyle font15DarkBlueMedium = TextStyle(
+  static TextStyle font15DarkBlueMedium = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     color: MangerColors.mainBlue,
-    
   );
-    static TextStyle font14BlueSemiBold = TextStyle(
+  static TextStyle font14BlueSemiBold = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
     color: MangerColors.mainBlue,
   );
-}
+  static TextStyle font18Black700w = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+    color: MangerColors.black,
+  );
+  static TextStyle font11darkgray400w = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w400,
+    color: MangerColors.darkgray,
+  );
 
+  static TextStyle font18White500w = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    color: MangerColors.white,
+  );
+  static TextStyle font12Blue400w = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: MangerColors.mainBlue,
+  );
+  
+  static TextStyle font18Black600w = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+    color: MangerColors.black,
+  );
+
+  static TextStyle font12Black400w = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: MangerColors.black,
+  );
+
+  static TextStyle font16Black700w = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    color: MangerColors.black,
+  );
+  
+  static TextStyle font12Gray500w = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: MangerColors.gray,
+  );
+  
+}
