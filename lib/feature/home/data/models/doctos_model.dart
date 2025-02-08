@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'doctos_model.g.dart';
 
 @JsonSerializable()
-class DoctosModel {
+class DoctorsModel {
   int? id;
   String? name;
   String? email;
@@ -12,7 +12,7 @@ class DoctosModel {
   @JsonKey(name: 'appoint_price')
   int? price;
   String degree;
-  DoctosModel({
+  DoctorsModel({
     this.id,
     this.name,
     this.email,
@@ -22,6 +22,6 @@ class DoctosModel {
     this.price,
     required this.degree,
   });
-  factory DoctosModel.fromJson(Map<String, dynamic> json) =>
-      _$DoctosModelFromJson(json);
+  factory DoctorsModel.fromJson(Map<String, dynamic> json) =>
+      _$DoctorsModelFromJson(json);
 }

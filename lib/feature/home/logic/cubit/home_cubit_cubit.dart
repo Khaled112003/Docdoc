@@ -7,18 +7,18 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_cubit_state.dart';
 part 'home_cubit_cubit.freezed.dart';
 
-class HomeCubit extends Cubit<HomeCubitState> {
-  HomeCubit(this.homeRepo) : super(const HomeCubitState.initial());
+class HomeCubit extends Cubit<HomeState> {
+  HomeCubit(this.homeRepo) : super(const HomeState.initial());
   final HomeRepo homeRepo;
   Future<void> getSpecialties() async {
-    emit(const HomeCubitState.loading());
+    emit(const HomeState.loading());
     final result = await homeRepo.getSpecialties();
     result.when(
       success: (specilzationsModel) {
-        emit(HomeCubitState.loaded(specilzationsModel));
+        emit(HomeState.loaded(specilzationsModel));
       },
       failure: (error) {
-        emit(HomeCubitState.error(ErrorHandler.handle(error)));
+        emit(HomeState.error(ErrorHandler.handle(error)));
       },
     );
   }

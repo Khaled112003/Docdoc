@@ -12,7 +12,7 @@ SpecializationDataList _$SpecializationDataListFromJson(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       doctors: (json['doctors'] as List<dynamic>?)
-          ?.map((e) => DoctosModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => DoctorsModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

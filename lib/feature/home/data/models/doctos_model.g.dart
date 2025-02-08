@@ -6,7 +6,7 @@ part of 'doctos_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DoctosModel _$DoctosModelFromJson(Map<String, dynamic> json) => DoctosModel(
+DoctorsModel _$DoctorsModelFromJson(Map<String, dynamic> json) => DoctorsModel(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       email: json['email'] as String?,
@@ -17,7 +17,7 @@ DoctosModel _$DoctosModelFromJson(Map<String, dynamic> json) => DoctosModel(
       degree: json['degree'] as String,
     );
 
-Map<String, dynamic> _$DoctosModelToJson(DoctosModel instance) =>
+Map<String, dynamic> _$DoctorsModelToJson(DoctorsModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

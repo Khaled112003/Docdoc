@@ -6,7 +6,7 @@ class SpecializationDataList {
   int? id;
   String? name;
   @JsonKey(name: 'doctors')
-  List<DoctosModel>? doctors;
+  List<DoctorsModel>? doctors;
   SpecializationDataList({this.id, this.name, this.doctors});
   factory SpecializationDataList.fromJson(Map<String, dynamic> json) => _$SpecializationDataListFromJson(json);
 }
