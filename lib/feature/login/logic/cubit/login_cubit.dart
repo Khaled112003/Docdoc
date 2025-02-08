@@ -1,6 +1,9 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:daweny/core/helpers/shared_pref_helper.dart';
+import 'package:daweny/core/helpers/shared_pref_keys.dart';
+import 'package:daweny/core/networking/dio_factory.dart';
 import 'package:daweny/feature/login/data/models/login_request_body.dart';
 import 'package:daweny/feature/login/data/repos/login_repo.dart';
 import 'package:daweny/feature/login/logic/cubit/login_state.dart';
@@ -21,8 +24,8 @@ class LoginCubit extends Cubit<LoginState> {
   emit(const LoginState.loading());
   final response = await loginRepo.login(loginRequest);
   response.when(
-    success: (loginResponse) {
-      log("Login Success: ${loginResponse.userData!.token}");
+    success: (loginResponse) async {
+      await saveUserToken(loginResponse.userData?.token??"");
       emit(LoginState.success(loginResponse));
     }, 
     failure: (error) {
@@ -31,5 +34,9 @@ class LoginCubit extends Cubit<LoginState> {
     }
   );
 }
+Future<void> saveUserToken(String token)async{
+    await SharedPrefHelper.setData(SharedPrefKeys.token, token);
+    DioFactory.setTokenIntoHeaderAfterLogin(token);
+  }
 
 }

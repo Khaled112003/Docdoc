@@ -21,7 +21,7 @@ class LoginBlocListner extends StatelessWidget {
           success: (loginResponse) {
             debugPrint("Navigating to Home...");
             context.pop();
-            context.go("/home");
+            context.go("/");
           },
           failure: (error) {
             debugPrint("Login Error: $error");

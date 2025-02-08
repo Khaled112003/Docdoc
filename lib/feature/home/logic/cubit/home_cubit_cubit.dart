@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+
 import 'package:daweny/core/networking/api_error_handler.dart';
 import 'package:daweny/feature/home/data/models/specilzations_model.dart';
 import 'package:daweny/feature/home/data/repo/home_repo.dart';
@@ -15,6 +16,7 @@ class HomeCubit extends Cubit<HomeState> {
     final result = await homeRepo.getSpecialties();
     result.when(
       success: (specilzationsModel) {
+        
         emit(HomeState.loaded(specilzationsModel));
       },
       failure: (error) {
@@ -22,4 +24,5 @@ class HomeCubit extends Cubit<HomeState> {
       },
     );
   }
+  
 }
