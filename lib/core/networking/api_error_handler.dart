@@ -148,7 +148,11 @@ ApiErrorModel _handleError(DioException error) {
       if (error.response != null &&
           error.response?.statusCode != null &&
           error.response?.statusMessage != null) {
-        return ApiErrorModel.fromJson(error.response!.data);
+        if (error.response!.data is Map<String, dynamic>) {
+          return ApiErrorModel.fromJson(error.response!.data);
+        } else {
+          return DataSource.DEFAULT.getFailure();
+        }
       } else {
         return DataSource.DEFAULT.getFailure();
       }
@@ -156,7 +160,11 @@ ApiErrorModel _handleError(DioException error) {
       if (error.response != null &&
           error.response?.statusCode != null &&
           error.response?.statusMessage != null) {
-        return ApiErrorModel.fromJson(error.response!.data);
+        if (error.response!.data is Map<String, dynamic>) {
+          return ApiErrorModel.fromJson(error.response!.data);
+        } else {
+          return DataSource.DEFAULT.getFailure();
+        }
       } else {
         return DataSource.DEFAULT.getFailure();
       }
@@ -166,9 +174,7 @@ ApiErrorModel _handleError(DioException error) {
       return DataSource.DEFAULT.getFailure();
     case DioExceptionType.badCertificate:
       return DataSource.DEFAULT.getFailure();
-    case DioExceptionType.badResponse:
-      return DataSource.DEFAULT.getFailure();
-  }
+    }
 }
 
 class ApiInternalStatus {
