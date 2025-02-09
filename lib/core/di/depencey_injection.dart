@@ -1,7 +1,7 @@
 import 'package:daweny/core/networking/api_servise.dart';
 import 'package:daweny/core/networking/dio_factory.dart';
 import 'package:daweny/feature/home/data/repo/home_repo.dart';
-import 'package:daweny/feature/home/logic/cubit/home_cubit_cubit.dart';
+import 'package:daweny/feature/home/logic/cubit/home_cubit.dart';
 import 'package:daweny/feature/login/data/repos/login_repo.dart';
 import 'package:daweny/feature/login/logic/cubit/login_cubit.dart';
 import 'package:daweny/feature/sign_up/data/repo/sign_up_repo.dart';

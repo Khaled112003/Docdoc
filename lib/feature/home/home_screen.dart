@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:daweny/core/helpers/spacing.dart';
-import 'package:daweny/feature/home/logic/cubit/home_cubit_cubit.dart';
+import 'package:daweny/feature/home/logic/cubit/home_cubit.dart';
 
 import 'package:daweny/feature/home/ui/widget/doctor_specility_listview.dart';
 import 'package:daweny/feature/home/ui/widget/doctors_blue_container.dart';
@@ -34,9 +34,8 @@ class HomeScreen extends StatelessWidget {
                     orElse: () {
                       return SizedBox();
                     },
-                    loaded: (specilzationsModel) {
-                      var specializationDataList =
-                          specilzationsModel.specializationDataList;
+                    loaded: (specilzationList) {
+                      final specializationDataList = specilzationList;
                       return Expanded(
                         child: Column(
                           children: [
@@ -45,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                                     specializationDataList ?? []),
                                     verticalSpace( 8),
                             DoctorsListView(
-                              doctors: specializationDataList![0].doctors,
+                              doctors: specializationDataList![0]?.doctors,
                             ),
                           ],
                         ),
