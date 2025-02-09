@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:daweny/core/helpers/spacing.dart';
-import 'package:daweny/core/networking/api_error_handler.dart';
 import 'package:daweny/feature/home/logic/cubit/home_cubit_cubit.dart';
 
 import 'package:daweny/feature/home/ui/widget/doctor_specility_listview.dart';
@@ -57,9 +56,7 @@ class HomeScreen extends StatelessWidget {
                     },
                     error: (error) {
                       log("Error1 $error");
-                      String? errorMessage = error is ErrorHandler
-                          ? error.apiErrorModel.message
-                          : error.toString();
+                      String? errorMessage = error.apiErrorModel.message;
                       return Center(child: Text("Error: $errorMessage"));
                     },
                   );
