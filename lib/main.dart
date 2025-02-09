@@ -33,8 +33,8 @@ class Docdoc extends StatelessWidget {
 }
 
 checkUserLogin() async {
-  String userToken = await SharedPrefHelper.getString(SharedPrefKeys.token);
-  if (userToken != null && userToken.isNotEmpty) {
+  String userToken = await SharedPrefHelper.getSecuredString(SharedPrefKeys.token);
+  if ( userToken.isNotEmpty) {
     isLogedInUser = true;
   } else {
     isLogedInUser = false;

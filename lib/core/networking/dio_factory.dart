@@ -28,14 +28,14 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.token)}',
+          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.token)}',
     };
   }
 
   static void setTokenIntoHeaderAfterLogin(String token) async{
     dio?.options.headers = {
        'Authorization':
-          'Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.token)}',
+          'Bearer $token',
     };
   }
 
