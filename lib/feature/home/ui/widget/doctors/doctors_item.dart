@@ -3,10 +3,10 @@ import 'package:daweny/feature/home/data/models/doctos_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/spacing.dart';
+import '../../../../../core/helpers/spacing.dart';
 
-class DoctorsListviewItem extends StatelessWidget {
-  const DoctorsListviewItem({super.key,  this.doctors});
+class DoctorItem extends StatelessWidget {
+  const DoctorItem({super.key,  this.doctors});
   final DoctorsModel? doctors;
 
   @override

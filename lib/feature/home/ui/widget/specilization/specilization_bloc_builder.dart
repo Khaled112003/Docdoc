@@ -1,14 +1,13 @@
 import 'dart:developer';
 
-import 'package:daweny/core/helpers/spacing.dart';
 import 'package:daweny/feature/home/logic/cubit/home_cubit.dart';
-import 'package:daweny/feature/home/ui/widget/doctor_specility_listview.dart';
-import 'package:daweny/feature/home/ui/widget/recommendations_doctors.dart';
+import 'package:daweny/feature/home/ui/widget/specilization/specility_listview.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class specilizationAndDoctorsBlocBuilder extends StatelessWidget {
-  const specilizationAndDoctorsBlocBuilder({
+class SpecilizationAndBlocBuilder extends StatelessWidget {
+  const SpecilizationAndBlocBuilder({
     super.key,
   });
 
@@ -23,20 +22,13 @@ class specilizationAndDoctorsBlocBuilder extends StatelessWidget {
             return SizedBox();
           },
           loaded: (specilzationList) {
-            final specializationDataList = specilzationList;
-            return Expanded(
-              child: Column(
-                children: [
-                  DoctorSpecilityListView(
-                      specializationDataList:
-                          specializationDataList ?? []),
-                          verticalSpace( 8),
-                  DoctorsListView(
-                    doctors: specializationDataList![0]?.doctors,
-                  ),
-                ],
-              ),
-            );
+            try {
+              return setupSuccess(specilzationList);
+            } catch (e, stackTrace) {
+              log("Error in loaded state: $e");
+              log("StackTrace: $stackTrace");
+              return Center(child: Text("Unexpected error occurred"));
+            }
           },
           loading: () {
             return const Center(child: CircularProgressIndicator());
@@ -50,4 +42,9 @@ class specilizationAndDoctorsBlocBuilder extends StatelessWidget {
       },
     );
   }
+}
+
+Widget setupSuccess(specializationDataList) {
+  return SpecilityListView(
+      specializationDataList: specializationDataList ?? []);
 }

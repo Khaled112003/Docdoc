@@ -20,9 +20,9 @@ class HomeCubit extends Cubit<HomeState> {
       success: (specilzationsModel) {
         specilzationList = specilzationsModel.specializationDataList ?? [];
         getDoctorsBySpecilzationId(
-            specilizationId: specilzationList?.first?.id ?? 1);
+            specilizationId: specilzationList?.first?.id);
 
-        emit(HomeState.loaded(specilzationList));
+        emit(HomeState.loaded(specilzationsModel.specializationDataList));
       },
       failure: (error) {
         emit(HomeState.error(ErrorHandler.handle(error)));
@@ -30,19 +30,28 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-  getDoctorsBySpecilzationId({required int specilizationId}) {
-    List<DoctorsModel?>? filterDoctors =
-        filterSpecilzationList(specilizationId);
-    if (filterDoctors != null && filterDoctors.isNotEmpty) {
-      emit(HomeState.doctorsSuccess(filterDoctors));
-    } else {
-      emit(HomeState.doctorsError(ErrorHandler.handle("No Doctors Found")));
-    }
+  getDoctorsBySpecilzationId({required int? specilizationId}) {
+  if (specilizationId == null) {
+    emit(HomeState.doctorsError(ErrorHandler.handle("Invalid Specialization ID")));
+    return;
   }
 
-  filterSpecilzationList(int specilizationId) {
-    return specilzationList
-        ?.firstWhere((specilization) => specilization?.id == specilizationId)
-        ?.doctors;
+  List<DoctorsModel?>? filterDoctors = filterSpecilzationList(specilizationId);
+  
+  if (filterDoctors != null && filterDoctors.isNotEmpty) {
+    emit(HomeState.doctorsSuccess(filterDoctors));
+  } else {
+    emit(HomeState.doctorsError(ErrorHandler.handle("No Doctors Found")));
   }
+}
+
+filterSpecilzationList(specilizationId) {
+  return specilzationList
+      ?.firstWhere(
+        (specilization) => specilization?.id == specilizationId,
+        orElse: () => SpecializationDataList(id: -1, name: "", doctors: []), // ✅ تجنب الخطأ
+      )
+      ?.doctors;
+}
+
 }

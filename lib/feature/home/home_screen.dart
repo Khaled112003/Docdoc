@@ -1,7 +1,8 @@
 
 import 'package:daweny/core/helpers/spacing.dart';
 
-import 'package:daweny/feature/home/ui/widget/doctors-specilization_bloc_builder.dart';
+import 'package:daweny/feature/home/ui/widget/specilization/specilization_bloc_builder.dart';
+import 'package:daweny/feature/home/ui/widget/doctors/doctors_bloc_builder.dart';
 import 'package:daweny/feature/home/ui/widget/doctors_blue_container.dart';
 import 'package:daweny/feature/home/ui/widget/home_appbar.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,9 @@ class HomeScreen extends StatelessWidget {
               const HomeAppbar(),
               const DoctorsBlueContainer(),
               verticalSpace(15),
-             const specilizationAndDoctorsBlocBuilder(),
+             const SpecilizationAndBlocBuilder(),
+             verticalSpace(8),
+             const DoctorsBlocBuilder()
             ],
           ),
         ),
