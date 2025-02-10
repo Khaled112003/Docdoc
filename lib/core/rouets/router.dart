@@ -1,6 +1,6 @@
 import 'package:daweny/core/di/depencey_injection.dart';
 import 'package:daweny/feature/home/home_screen.dart';
-import 'package:daweny/feature/home/logic/cubit/home_cubit.dart';
+import 'package:daweny/feature/home/logic/cubit/home_cubit_cubit.dart';
 import 'package:daweny/feature/login/logic/cubit/login_cubit.dart';
 import 'package:daweny/feature/login/login.dart';
 import 'package:daweny/feature/onboarding/onboarding_page.dart';

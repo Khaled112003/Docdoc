@@ -1,5 +1,5 @@
 import 'package:daweny/feature/home/data/models/doctos_model.dart';
-import 'package:daweny/feature/home/ui/widget/doctors/doctors_item.dart';
+import 'package:daweny/feature/home/ui/widget/doctors_listview_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class DoctorsListView extends StatelessWidget {
       child: ListView.builder(itemCount: doctors?.length,
         itemBuilder: (context, index) {
 
-         return  DoctorItem(doctors: doctors?[index]);
+         return  DoctorsListviewItem(doctors: doctors![index]!);
         },
       ),
     );

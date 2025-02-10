@@ -80,10 +80,4 @@ class MangerStyle {
     color: MangerColors.gray,
   );
   
-  static TextStyle font14Black700w = TextStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w700,
-    color: MangerColors.black,
-  );
-  
 }
