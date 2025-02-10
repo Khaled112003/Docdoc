@@ -11,17 +11,20 @@ class SpecilityItem extends StatelessWidget {
   const SpecilityItem({
     super.key,
     required this.index,
-    this.specializationDataList, required this.selectedIndex,
+    this.specializationDataList,
+    required this.selectedIndex,
   });
   final int index;
   final int selectedIndex;
-  
+
   final SpecializationDataList? specializationDataList;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.only(start: index == 0 ? 0 : 24.w,),
+      padding: EdgeInsetsDirectional.only(
+        start: index == 0 ? 0 : 24.w,
+      ),
       child: Column(
         children: [
           index == selectedIndex
@@ -35,27 +38,26 @@ class SpecilityItem extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 28,
                     backgroundColor: MangerColors.lightBlue,
-                    child: SvgPicture.asset(
-                      'assets/svgs/specility.svg',
+                    child: Image.asset(
+                      'assets/images/nurse.png',
                       height: 42.h,
                       width: 42.w,
                     ),
-                    
                   ),
                 )
-              : 
-          CircleAvatar(
-            radius: 28,
-            backgroundColor: MangerColors.lightBlue,
-            child: Image.asset(
-              'assets/images/nurse.png',
-            ),
-          ),
+              : CircleAvatar(
+                  radius: 28,
+                  backgroundColor: MangerColors.lightBlue,
+                  child: Image.asset(
+                    'assets/images/nurse.png',
+                  ),
+                ),
           verticalSpace(10),
           Text(
             specializationDataList?.name ?? "specilization",
-            style:index == selectedIndex
-                ? MangerStyle.font14Black700w :MangerStyle.font12Black400w,
+            style: index == selectedIndex
+                ? MangerStyle.font14Black700w
+                : MangerStyle.font12Black400w,
           )
         ],
       ),
