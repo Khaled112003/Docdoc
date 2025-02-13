@@ -4,7 +4,7 @@ part 'sign_up_response.g.dart';
 @JsonSerializable()
 class SignUpResponse {
   final String? message;
-  final String? status;
+  final bool? status;
   final int? code;
   final UserData? userData;
 
