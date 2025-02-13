@@ -3,8 +3,8 @@ import 'package:daweny/core/thems/fonts/manger_style.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class AlreadyHaveAccount extends StatelessWidget {
-  const AlreadyHaveAccount({super.key});
+class NotHaveAccount extends StatelessWidget {
+  const NotHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {

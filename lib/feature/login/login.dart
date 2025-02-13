@@ -3,7 +3,7 @@ import 'package:daweny/core/thems/fonts/manger_style.dart';
 import 'package:daweny/core/widgets/button_item.dart';
 import 'package:daweny/feature/login/data/models/login_request_body.dart';
 import 'package:daweny/feature/login/logic/cubit/login_cubit.dart';
-import 'package:daweny/feature/login/widgets/already_have_account.dart';
+import 'package:daweny/feature/login/widgets/not_have_account.dart';
 import 'package:daweny/feature/login/widgets/email_and_password.dart';
 import 'package:daweny/feature/login/widgets/login__bloc_listener.dart';
 import 'package:daweny/feature/login/widgets/terms_condicitions.dart';
@@ -67,7 +67,7 @@ class Login extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
-                const AlreadyHaveAccount(),
+                const NotHaveAccount(),
                 const LoginBlocListner()
               ],
             ),
