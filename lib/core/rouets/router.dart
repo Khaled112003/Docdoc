@@ -12,7 +12,7 @@ import 'package:go_router/go_router.dart';
 
 final router = GoRouter(routes: [
   GoRoute(
-    path: '/ef',
+    path: '/onboarding',
     builder: (context, state) => const OnboardingPage(),
   ),
   GoRoute(

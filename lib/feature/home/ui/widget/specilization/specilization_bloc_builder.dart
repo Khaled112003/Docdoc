@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:daweny/core/helpers/spacing.dart';
 import 'package:daweny/feature/home/logic/cubit/home_cubit.dart';
@@ -32,9 +31,9 @@ class SpecilizationAndBlocBuilder extends StatelessWidget {
           loading: () {
             return setupLoading();
           },
-          error: (error) {
-            log("Error1 $error");
-            String? errorMessage = error.apiErrorModel.message;
+          error: (apiErrorModel) {
+           
+            final errorMessage = apiErrorModel.getAllErrorMessages();
             return Center(child: Text("Error: $errorMessage"));
           },
         );

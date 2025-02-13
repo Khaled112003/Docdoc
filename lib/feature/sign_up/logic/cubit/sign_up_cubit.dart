@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+
 import 'package:daweny/feature/sign_up/data/model/sign_up_request.dart';
 import 'package:daweny/feature/sign_up/data/repo/sign_up_repo.dart';
 import 'package:daweny/feature/sign_up/logic/cubit/sign_up_state.dart';
@@ -30,8 +31,8 @@ class SignUpCubit extends Cubit<SignUpState> {
       success: (data) => emit(
         SignUpState.success(data),
       ),
-      failure: (error) => emit(
-        SignUpState.failure(error: error.apiErrorModel.message ?? ""),
+      failure: (apiErrorModel) => emit(
+        SignUpState.failure(apiErrorModel),
       ),
     );
   }

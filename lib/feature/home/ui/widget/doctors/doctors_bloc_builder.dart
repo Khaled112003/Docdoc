@@ -20,8 +20,8 @@ class DoctorsBlocBuilder extends StatelessWidget {
             
             return setupSuccess(doctorsList);
           },
-          doctorsError: (error) {
-            String? errorMessage = error.apiErrorModel.message;
+          doctorsError: (apiErrorModel) {
+            final errorMessage = apiErrorModel.getAllErrorMessages();
             return Center(child: Text("Error: $errorMessage"));
           },
         );

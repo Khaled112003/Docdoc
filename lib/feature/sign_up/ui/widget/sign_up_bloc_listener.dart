@@ -1,3 +1,4 @@
+import 'package:daweny/core/networking/api_errors_model.dart';
 import 'package:daweny/core/thems/colors/colors.dart';
 import 'package:daweny/core/thems/fonts/manger_style.dart';
 import 'package:daweny/feature/sign_up/logic/cubit/sign_up_cubit.dart';
@@ -30,8 +31,8 @@ class SignupBlocListener extends StatelessWidget {
             context.pop();
             showSuccessDialog(context);
           },
-          failure: (error) {
-            setupErrorState(context, error);
+          failure: (apiErrorModel) {
+            setupErrorState(context,apiErrorModel );
           },
         );
       },
@@ -60,7 +61,7 @@ class SignupBlocListener extends StatelessWidget {
                 disabledForegroundColor: Colors.grey.withOpacity(0.38),
               ),
               onPressed: () {
-                context.go("home");
+                context.go("/");
               },
               child: const Text('Continue'),
             ),
@@ -70,32 +71,31 @@ class SignupBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
-    context.pop();
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        icon: const Icon(
-          Icons.error,
-          color: Colors.red,
-          size: 32,
-        ),
-        content: Text(
-          error,
-          style: MangerStyle.font15DarkBlueMedium,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              context.pop();
-            },
-            child: Text(
-              'Got it',
-              style: MangerStyle.font14BlueSemiBold,
-            ),
-          ),
-        ],
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
+  context.pop();
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      icon: const Icon(
+        Icons.error,
+        color: Colors.red,
+        size: 32,
       ),
-    );
-  }
-}
+      content: Text(
+        apiErrorModel.getAllErrorMessages(),
+        style: MangerStyle.font15DarkBlueMedium,
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            context.pop();
+          },
+          child: Text(
+            'Got it',
+            style: MangerStyle.font14BlueSemiBold,
+          ),
+        ),
+      ],
+    ),
+  );
+}}
