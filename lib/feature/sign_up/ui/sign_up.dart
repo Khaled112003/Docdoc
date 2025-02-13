@@ -1,7 +1,9 @@
 import 'package:daweny/core/thems/colors/colors.dart';
 import 'package:daweny/core/thems/fonts/manger_style.dart';
 import 'package:daweny/core/widgets/button_item.dart';
+import 'package:daweny/feature/login/widgets/terms_condicitions.dart';
 import 'package:daweny/feature/sign_up/logic/cubit/sign_up_cubit.dart';
+import 'package:daweny/feature/sign_up/ui/widget/already_have_account.dart';
 import 'package:daweny/feature/sign_up/ui/widget/sign_up_bloc_listener.dart';
 import 'package:daweny/feature/sign_up/ui/widget/sign_up_form.dart';
 import 'package:flutter/material.dart';
@@ -51,10 +53,11 @@ class SignUp extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-               
+               const TermsAndConditions(),
                 const SizedBox(
                   height: 25,
                 ),
+               const AlreadyHaveAccount(),
                 
                 const SignupBlocListener()
               ],
