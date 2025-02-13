@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 
 import 'package:daweny/core/networking/api_error_handler.dart';
+import 'package:daweny/core/networking/api_errors_model.dart';
 import 'package:daweny/feature/home/data/models/doctos_model.dart';
 import 'package:daweny/feature/home/data/models/specialization_data_list.dart';
 import 'package:daweny/feature/home/data/repo/home_repo.dart';
@@ -24,15 +25,15 @@ class HomeCubit extends Cubit<HomeState> {
 
         emit(HomeState.loaded(specilzationsModel.specializationDataList));
       },
-      failure: (error) {
-        emit(HomeState.error(ErrorHandler.handle(error)));
+      failure: (apiErrorModel) {
+        emit(HomeState.error(apiErrorModel));
       },
     );
   }
 
   getDoctorsBySpecilzationId({required int? specilizationId}) {
   if (specilizationId == null) {
-    emit(HomeState.doctorsError(ErrorHandler.handle("Invalid Specialization ID")));
+    emit(HomeState.doctorsError(ApiErrorHandler.handle("Invalid Specialization ID")));
     return;
   }
 
@@ -41,7 +42,7 @@ class HomeCubit extends Cubit<HomeState> {
   if (filterDoctors != null && filterDoctors.isNotEmpty) {
     emit(HomeState.doctorsSuccess(filterDoctors));
   } else {
-    emit(HomeState.doctorsError(ErrorHandler.handle("No Doctors Found")));
+    emit(HomeState.doctorsError(ApiErrorHandler.handle("No Doctors Found")));
   }
 }
 
