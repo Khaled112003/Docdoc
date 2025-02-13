@@ -1,3 +1,4 @@
+import 'package:daweny/core/networking/api_errors_model.dart';
 import 'package:daweny/core/thems/colors/colors.dart';
 import 'package:daweny/core/thems/fonts/manger_style.dart';
 import 'package:daweny/feature/login/logic/cubit/login_cubit.dart';
@@ -45,7 +46,7 @@ class LoginBlocListner extends StatelessWidget {
   }
 }
 
-void setupErrorState(BuildContext context, String error) {
+void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
   context.pop();
   showDialog(
     context: context,
@@ -56,7 +57,7 @@ void setupErrorState(BuildContext context, String error) {
         size: 32,
       ),
       content: Text(
-        error,
+        apiErrorModel.getAllErrorMessages(),
         style: MangerStyle.font15DarkBlueMedium,
       ),
       actions: [
