@@ -1,0 +1,23 @@
+{
+  "bestDoctorApp": "أفضل تطبيق لحجز مواعيد الأطباء",
+  "manageAppointments": "قم بإدارة وجدولة جميع مواعيدك الطبية بسهولة مع Docdoc لتجربة جديدة.",
+  "welcomeBack": "مرحباً بعودتك",
+  "getStarted": "ابدأ الآن",
+  "welcomeBackDesc": "سعداء بعودتك، ولا يسعنا الانتظار لمعرفة ما كنت تفعله منذ آخر تسجيل دخول.",
+  "login": "تسجيل الدخول",
+  "forgotPassword": "هل نسيت كلمة المرور؟",
+  "termsAndPrivacyPrefix": "بتسجيل الدخول، فإنك توافق على",
+  "terms": " الشروط والأحكام",
+  "and": " و",
+  "privacyPolicy": " سياسة الخصوصية.",
+  "notHaveAccount": "ليس لديك حساب؟",
+  "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+  "signUp": "إنشاء حساب",
+  "signUpDesc": "سجّل الآن وابدأ في استكشاف كل ما يقدمه تطبيقنا. نحن متحمسون لانضمامك إلى مجتمعنا!",
+  "createAccount": "إنشاء حساب",
+  "hi": "مرحبًا",
+  "howAreYou": "كيف حالك اليوم؟",
+  "bookNearestDoctor": "احجز وحدد موعد مع أقرب طبيب",
+  "doctorSpeciality": "تخصص الطبيب",
+  "recommendationDoctor": "الأطباء الموصى بهم"
+}

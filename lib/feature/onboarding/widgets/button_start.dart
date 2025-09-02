@@ -1,5 +1,6 @@
 import 'package:daweny/core/thems/colors/colors.dart';
 import 'package:daweny/core/thems/fonts/manger_style.dart';
+import 'package:daweny/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -26,7 +27,7 @@ class ItemButtonStarted extends StatelessWidget {
             GoRouter.of(context).go("/Login");
           },
           child: Text(
-            "Get Start",
+           S.of(context).getStarted,
             style:MangerStyle.font600wSize18
           ),
         ),

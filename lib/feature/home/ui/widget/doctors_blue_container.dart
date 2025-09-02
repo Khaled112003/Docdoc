@@ -1,4 +1,5 @@
 import 'package:daweny/core/thems/fonts/manger_style.dart';
+import 'package:daweny/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,7 +31,7 @@ class DoctorsBlueContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  'Book and\nschedule with\nnearest doctor',
+                  S.of(context).bookNearestDoctor,
                   style: MangerStyle.font18White500w,
                 ),
                 SizedBox(
@@ -46,7 +47,7 @@ class DoctorsBlueContainer extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      'Find Nearby',
+                      S.of(context).findNearby,
                       style: MangerStyle.font12Blue400w,
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:daweny/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -27,7 +28,7 @@ class DoctorAndlogAndText extends StatelessWidget {
               right: 0,
               left: 0,
               child: Text(
-                "Best Doctor\nAppoinment App",
+                S.of(context).bestDoctorApp,
                 textAlign: TextAlign.center,
                 style: MangerStyle.fontBoldSize32,
               ))

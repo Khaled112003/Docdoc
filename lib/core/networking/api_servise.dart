@@ -17,6 +17,7 @@ abstract class ApiService{
   Future<SignUpResponse> signUp(@Body() SignUpRequestBody signUpRequestBody);
   @GET(ApiConstant.getSpecialties)
   Future<SpecilzationsModel> getSpecialties();
+  
 
 
 }

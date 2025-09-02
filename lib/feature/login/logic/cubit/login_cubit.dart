@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:daweny/core/helpers/shared_pref_helper.dart';
 import 'package:daweny/core/helpers/shared_pref_keys.dart';
-import 'package:daweny/core/networking/api_errors_model.dart';
 import 'package:daweny/core/networking/dio_factory.dart';
 import 'package:daweny/feature/login/data/models/login_request_body.dart';
 import 'package:daweny/feature/login/data/repos/login_repo.dart';

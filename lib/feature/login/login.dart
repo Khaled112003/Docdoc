@@ -7,13 +7,19 @@ import 'package:daweny/feature/login/widgets/not_have_account.dart';
 import 'package:daweny/feature/login/widgets/email_and_password.dart';
 import 'package:daweny/feature/login/widgets/login__bloc_listener.dart';
 import 'package:daweny/feature/login/widgets/terms_condicitions.dart';
+import 'package:daweny/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
@@ -27,7 +33,7 @@ class Login extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Welcome Back",
+                  S.of(context).welcomeBack,
                   style: MangerStyle.font700wSize24
                       .copyWith(color: MangerColors.mainBlue),
                 ),
@@ -35,7 +41,7 @@ class Login extends StatelessWidget {
                   height: 10.h,
                 ),
                 Text(
-                  "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
+                  S.of(context).welcomeBackDesc,
                   style: MangerStyle.font400wSize10,
                 ),
                 SizedBox(
@@ -46,7 +52,7 @@ class Login extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "Forget Password? ",
+                      S.of(context).forgotPassword,
                       style: MangerStyle.font400wSize10
                           .copyWith(color: MangerColors.mainBlue),
                     )
@@ -56,7 +62,7 @@ class Login extends StatelessWidget {
                   height: 30,
                 ),
                 ButtonItem(
-                    text: "Login",
+                    text: S.of(context).login,
                     onPressed: () {
                       validateThenDoLogin(context);
                     }),

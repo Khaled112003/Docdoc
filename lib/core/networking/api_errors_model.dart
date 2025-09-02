@@ -7,7 +7,7 @@ class ApiErrorModel {
   final String? message;
   final int? code;
   @JsonKey(name: 'data')
-  final Map<String, dynamic>? errors;
+  final dynamic errors; // <-- عدّل هنا
 
   ApiErrorModel({
     this.message,
@@ -22,14 +22,18 @@ class ApiErrorModel {
 
   /// Returns a String containing all error messages.
   String getAllErrorMessages() {
-    if (errors != null && errors!.isNotEmpty) {
-      return errors!.entries.map((entry) {
-        final value = entry.value;
-        if (value is List) {
-          return value.join('\n');
-        }
-        return value.toString();
-      }).join('\n');
+    if (errors != null) {
+      if (errors is Map<String, dynamic> && errors.isNotEmpty) {
+        return errors.entries.map((entry) {
+          final value = entry.value;
+          if (value is List) {
+            return value.join('\n');
+          }
+          return value.toString();
+        }).join('\n');
+      } else if (errors is List) {
+        return errors.join('\n');
+      }
     }
     return message ?? "Unknown error occurred";
   }

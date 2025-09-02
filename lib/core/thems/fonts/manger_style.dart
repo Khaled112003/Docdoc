@@ -86,4 +86,5 @@ class MangerStyle {
     color: MangerColors.black,
   );
   
+  
 }

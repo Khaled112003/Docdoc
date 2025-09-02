@@ -6,6 +6,7 @@ import 'package:daweny/feature/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:daweny/feature/sign_up/ui/widget/already_have_account.dart';
 import 'package:daweny/feature/sign_up/ui/widget/sign_up_bloc_listener.dart';
 import 'package:daweny/feature/sign_up/ui/widget/sign_up_form.dart';
+import 'package:daweny/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +27,7 @@ class SignUp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Create Account",
+                  S.of(context).signUp,
                   style: MangerStyle.font700wSize24
                       .copyWith(color: MangerColors.mainBlue),
                 ),
@@ -34,7 +35,7 @@ class SignUp extends StatelessWidget {
                   height: 10.h,
                 ),
                 Text(
-                  "Sign up now and start exploring all that our app has to offer. We're excited to welcome you to our community!",
+                  S.of(context).signUpDesc,
                   style: MangerStyle.font400wSize10,
                 ),
                 SizedBox(
@@ -46,7 +47,7 @@ class SignUp extends StatelessWidget {
                   height: 30,
                 ),
                 ButtonItem(
-                    text: "Create account",
+                    text: S.of(context).createAccount,
                     onPressed: () {
                       validateThenDoSignUp(context);
                     }),
